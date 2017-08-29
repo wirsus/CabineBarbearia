@@ -39,7 +39,7 @@ namespace CabineBarbearia.Models
         [Column("dt_admissao")]
         public DateTime Admissao { get; set; }
 
-        [Display(Name = "Status do Cliente")]
+        [Display(Name = "Status do Barbeiro")]
         [Column("id_status")]
         public bool Status { get; set; }
     }

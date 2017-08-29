@@ -10,107 +10,107 @@ using CabineBarbearia.Models;
 
 namespace CabineBarbearia.Controllers
 {
-    public class ClientesController : Controller
+    public class BarbeirosController : Controller
     {
         private CabineBarbeariaContexto db = new CabineBarbeariaContexto();
 
-        // GET: Clientes
+        // GET: Barbeiros
         public ActionResult Index()
         {
-            return View(db.Clientes.ToList());
+            return View(db.Barbeiroes.ToList());
         }
 
-        // GET: Clientes/Details/5
+        // GET: Barbeiros/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
+            Barbeiro barbeiro = db.Barbeiroes.Find(id);
+            if (barbeiro == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(barbeiro);
         }
 
-        // GET: Clientes/Create
+        // GET: Barbeiros/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Clientes/Create
+        // POST: Barbeiros/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDCliente,Nome,Apelido,Celular,Email,Cadastro,Status")] Cliente cliente)
+        public ActionResult Create([Bind(Include = "IDBarbeiro,Nome,Apelido,Celular,Email,Admissao,Status")] Barbeiro barbeiro)
         {
             if (ModelState.IsValid)
             {
-                db.Clientes.Add(cliente);
+                db.Barbeiroes.Add(barbeiro);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cliente);
+            return View(barbeiro);
         }
 
-        // GET: Clientes/Edit/5
+        // GET: Barbeiros/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
+            Barbeiro barbeiro = db.Barbeiroes.Find(id);
+            if (barbeiro == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(barbeiro);
         }
 
-        // POST: Clientes/Edit/5
+        // POST: Barbeiros/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDCliente,Nome,Apelido,Celular,Email,Cadastro,Status")] Cliente cliente)
+        public ActionResult Edit([Bind(Include = "IDBarbeiro,Nome,Apelido,Celular,Email,Admissao,Status")] Barbeiro barbeiro)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cliente).State = EntityState.Modified;
+                db.Entry(barbeiro).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cliente);
+            return View(barbeiro);
         }
 
-        // GET: Clientes/Delete/5
+        // GET: Barbeiros/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
+            Barbeiro barbeiro = db.Barbeiroes.Find(id);
+            if (barbeiro == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(barbeiro);
         }
 
-        // POST: Clientes/Delete/5
+        // POST: Barbeiros/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cliente cliente = db.Clientes.Find(id);
-            db.Clientes.Remove(cliente);
+            Barbeiro barbeiro = db.Barbeiroes.Find(id);
+            db.Barbeiroes.Remove(barbeiro);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

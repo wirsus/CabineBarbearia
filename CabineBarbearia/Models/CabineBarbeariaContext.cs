@@ -20,5 +20,7 @@ namespace CabineBarbearia.Models
         }
 
         public System.Data.Entity.DbSet<CabineBarbearia.Models.Cliente> Clientes { get; set; }
+
+        public System.Data.Entity.DbSet<CabineBarbearia.Models.Barbeiro> Barbeiroes { get; set; }
     }
 }
