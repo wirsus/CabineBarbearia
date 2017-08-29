@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CabineBarbearia.Models
 {
-    public class CabineBarbeariaContext : DbContext
+    public class CabineBarbeariaContexto : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -15,7 +15,7 @@ namespace CabineBarbearia.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public CabineBarbeariaContext() : base("name=CabineBarbeariaContext")
+        public CabineBarbeariaContexto() : base("name=CabineBarbearia")
         {
         }
 

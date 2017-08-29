@@ -12,7 +12,7 @@ namespace CabineBarbearia.Controllers
 {
     public class ClientesController : Controller
     {
-        private CabineBarbeariaContext db = new CabineBarbeariaContext();
+        private CabineBarbeariaContexto db = new CabineBarbeariaContexto();
 
         // GET: Clientes
         public ActionResult Index()
