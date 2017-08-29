@@ -1,0 +1,66 @@
+﻿@model CabineBarbearia.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nm_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nm_cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nm_apelido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nm_apelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nr_celular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nr_celular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dc_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dc_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_cadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_cadastro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_cliente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CabineBarbearia.Models.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nm_cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nm_apelido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nr_celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dc_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_cadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nm_cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nm_apelido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nr_celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dc_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_cadastro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_cliente }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_cliente }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_cliente })
+        </td>
+    </tr>
+}
+
+</table>
